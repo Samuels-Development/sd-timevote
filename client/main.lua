@@ -65,7 +65,7 @@ RegisterCommand('yes', function()
             TriggerEvent('chat:addMessage', {
                 color = {0, 255, 0},
                 multiline = true,
-                args = {'Server', message}
+                args = {'Vote Time', message}
             })
         elseif Config.NotificationType == 'notification' then
             QBCore.Functions.Notify(message, 'success', 5000)
@@ -76,7 +76,7 @@ RegisterCommand('yes', function()
             TriggerEvent('chat:addMessage', {
                 color = {255, 0, 0},
                 multiline = true,
-                args = {'Server', message}
+                args = {'Vote Time', message}
             })
         elseif Config.NotificationType == 'notification' then
             QBCore.Functions.Notify(message, 'error', 5000)
@@ -87,7 +87,7 @@ RegisterCommand('yes', function()
             TriggerEvent('chat:addMessage', {
                 color = {255, 0, 0},
                 multiline = true,
-                args = {'Server', message}
+                args = {'Vote Time', message}
             })
         elseif Config.NotificationType == 'notification' then
             QBCore.Functions.Notify(message, 'error', 5000)
@@ -104,7 +104,7 @@ RegisterCommand('no', function()
             TriggerEvent('chat:addMessage', {
                 color = {255, 0, 0},
                 multiline = true,
-                args = {'Server', message}
+                args = {'Vote Time', message}
             })
         elseif Config.NotificationType == 'notification' then
             QBCore.Functions.Notify(message, 'success', 5000)
@@ -115,7 +115,7 @@ RegisterCommand('no', function()
             TriggerEvent('chat:addMessage', {
                 color = {255, 0, 0},
                 multiline = true,
-                args = {'Server', message}
+                args = {'Vote Time', message}
             })
         elseif Config.NotificationType == 'notification' then
             QBCore.Functions.Notify(message, 'error', 5000)
@@ -126,7 +126,7 @@ RegisterCommand('no', function()
             TriggerEvent('chat:addMessage', {
                 color = {255, 0, 0},
                 multiline = true,
-                args = {'Server', message}
+                args = {'Vote Time', message}
             })
         elseif Config.NotificationType == 'notification' then
             QBCore.Functions.Notify(message, 'error', 5000)
