@@ -4,9 +4,7 @@ This is a simple resource that allows players to start a vote to skip the night 
 
 This resource is intended to be a basic implementation and is not actively maintained. However, the resource is open-source, and any pull requests to improve the code or add new features are welcome. At some point, an ESX implementation might be made, if anyone actually wants to use it.
 
-Please Consider checking out my other work here on GitHub or on my Store & Discord @ https://samuels-development.tebex.io & https://discord.gg/samueldev
-
-If you encounter any issues/bugs etc. you'd like adressed, make sure to join my discord and ask for support in the appropriate chat(s) or make an issue here on GitHub!
+You can check out my other work here on GitHub or on my Store and Discord @ https://discord.gg/samueldev / https://fivem.samueldev.shop/
 
 # Requirements
 
