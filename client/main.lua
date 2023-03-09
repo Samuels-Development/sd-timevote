@@ -3,6 +3,9 @@ local QBCore = exports['qb-core']:GetCoreObject()
 local voteActive = false
 local hasVoted = false
 
+local voteHasAppeared = false
+local timeout = 15000
+
 RegisterNetEvent('sd-votetime:client:startVote')
 AddEventHandler('sd-votetime:client:startVote', function()
     voteActive = true
@@ -10,6 +13,7 @@ end)
 
 RegisterNetEvent('sd-votetime:client:setTimeToDay')
 AddEventHandler('sd-votetime:client:setTimeToDay', function()
+    voteHasAppeared = true
     voteActive = false
     hasVoted = false
     local message = 'The vote to skip the night has passed.'
@@ -25,10 +29,14 @@ AddEventHandler('sd-votetime:client:setTimeToDay', function()
     Wait(3000)
     TriggerServerEvent('sd-votetime:server:resetVotes')
     ExecuteCommand("clear")
+    SetTimeout(timeout, function()
+        voteHasAppeared = false
+    end)
 end)
 
 RegisterNetEvent('sd-votetime:client:voteFailed')
 AddEventHandler('sd-votetime:client:voteFailed', function()
+    voteHasAppeared = true
     voteActive = false
     hasVoted = false
     local message = 'The vote to skip the night has failed. The time remains unchanged.'
@@ -44,12 +52,15 @@ AddEventHandler('sd-votetime:client:voteFailed', function()
     Wait(3000)
     TriggerServerEvent('sd-votetime:server:resetVotes')
     ExecuteCommand("clear")
+    SetTimeout(timeout, function()
+        voteHasAppeared = false
+    end)
 end)
 
 CreateThread(function()
     while true do
         local hour = GetClockHours()
-        if hour == Config.TimeForVote and not voteActive then
+        if hour == Config.TimeForVote and not voteActive and not voteHasAppeared then
             TriggerServerEvent('sd-votetime:server:startVote')
         end
         Wait(5000)
@@ -133,3 +144,4 @@ RegisterCommand('no', function()
         end
     end
 end)
+
