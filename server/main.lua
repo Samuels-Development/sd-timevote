@@ -8,9 +8,10 @@ local function startVote()
         yesVotes = 0
         noVotes = 0
         hasVoted = false
-        local message = 'A vote has started to skip the night and change the time to day. Type /yes or /no to vote.'
-        if Config.NotificationType == 'chat' then 
-            TriggerClientEvent('chat:addMessage', -1, {templateId = 'chatMessage', args = {'Vote Time', message}})
+        local message = 'A vote has started to skip the night. Type /yes or /no to vote.'
+        if Config.NotificationType == 'chat' then
+            print('chatmessage')
+            TriggerClientEvent('chat:addMessage', -1, {color = {255, 255, 0}, multiline = true, args = {'Vote Time', message}})
         elseif Config.NotificationType == 'notification' then
             TriggerClientEvent('QBCore:Notify', -1, message, "success", 5000)
         end
