@@ -15,7 +15,7 @@ local function startVote()
             TriggerClientEvent('QBCore:Notify', -1, message, "success", 5000)
         end
         TriggerClientEvent('sd-votetime:client:startVote', -1)
-        SetTimeout(10000, function()
+        SetTimeout(60000, function()
             voteActive = false
             if yesVotes > noVotes then
                 exports["qb-weathersync"]:setTime(8, 10)
